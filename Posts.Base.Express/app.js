@@ -11,6 +11,13 @@ const authRoutes = require('./routes/auth');
 const app = express();
 const { v4: uuidv4 } = require("uuid");
 
+app.use(cors(
+  {
+    origin: ["https://deploy-mern-1whq.vercel.app"],
+    methods: ["POST","GET","PATCH","PUT","DELETE"],
+    credentials: true
+  }
+));
 const fileStorage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "images");
