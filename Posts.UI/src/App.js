@@ -59,7 +59,7 @@ class App extends Component {
   loginHandler = (event, authData) => {
     event.preventDefault();
     this.setState({ authLoading: true });
-    fetch('https://blog-app-mern-api-iota.vercel.app/auth/login', {
+    fetch('https://blog-app-mern-api-iota.vercel.app:8080/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -109,7 +109,7 @@ class App extends Component {
   signupHandler = (event, authData) => {
     event.preventDefault();
     this.setState({ authLoading: true });
-    fetch('https://blog-app-mern-api-iota.vercel.app/auth/signup', {
+    fetch('https://blog-app-mern-api-iota.vercel.app:8080/auth/signup', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
