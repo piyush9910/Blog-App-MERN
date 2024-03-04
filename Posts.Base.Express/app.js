@@ -3,7 +3,6 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const cors = require('cors');
 const multer = require('multer');
 
 const feedRoutes = require('./routes/feed');
@@ -12,13 +11,6 @@ const authRoutes = require('./routes/auth');
 const app = express();
 const { v4: uuidv4 } = require("uuid");
 
-app.use(cors(
-  {
-    origin: ["*"],
-    methods: ["POST","GET","PUT","DELETE"],
-    credentials: true
-  }
-));
 const fileStorage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "images");
