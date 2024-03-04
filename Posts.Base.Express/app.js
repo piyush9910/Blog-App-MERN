@@ -14,8 +14,8 @@ const { v4: uuidv4 } = require("uuid");
 
 app.use(cors(
   {
-    origin: ["https://blog-app-mern-ui.vercel.app/"],
-    methods: ["POST","GET","PATCH","PUT","DELETE"],
+    origin: ["*"],
+    methods: ["POST","GET","PUT","DELETE"],
     credentials: true
   }
 ));
